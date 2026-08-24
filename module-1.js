@@ -151,3 +151,23 @@
 
 // const message = `Файл: ${string}`;
 // console.log(message);
+
+// Є текст `'JavaScript is a programming language'`. Отримай перші 10 символів і додай в кінці три крапки.
+
+// const text = 'JavaScript is a programming language';
+
+// const message = text.slice(0, 16) + '...';
+// console.log(message);
+
+// Є `'archive.backup.zip'`. Знайди останню крапку. Окремо отримай базову назву `'archive.backup'` та розширення `'zip'`.
+
+// const fileName = 'archive.backup.zip';
+
+// const dotIndex = fileName.lastIndexOf('.');
+// console.log(dotIndex);
+
+// const firstPart = fileName.slice(0, dotIndex);
+// const secondPart = fileName.slice(dotIndex);
+
+// console.log(firstPart);
+// console.log(secondPart);
