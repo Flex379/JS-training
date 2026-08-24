@@ -136,3 +136,18 @@
 
 // const slug1 = lowerTitle.split(' ').join('-');
 // console.log(slug1);
+
+// Є `'my-first-javascript-homework.js'`. Отримай назву без `'.js'`, заміни всі дефіси пробілами та додай префікс `'Файл: '`.
+
+// const fileName = "my-first-javascript-homework.js";
+// const atIndex = fileName.indexOf('.');
+// console.log(atIndex);
+
+// const slug = fileName.slice(0, atIndex);
+// console.log(slug);
+
+// const string = slug.replaceAll('-', ' ');
+// console.log(string);
+
+// const message = `Файл: ${string}`;
+// console.log(message);
