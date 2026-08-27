@@ -307,3 +307,174 @@
 
 
 // console.log(haveSameDomain('one@School.ORG', 'two@school.org'));
+
+// DAY 3 //
+
+
+// Створи змінну `isLoggedIn` зі значенням `true`. Якщо користувач увійшов у систему, виведи `Кабінет відкрито`.
+
+// const isLoggedIn = true;
+
+// if (isLoggedIn) {
+//   console.log('Кабінет відкрито');
+// }
+
+// Створи функцію `getScoreLevel(score)`: від 80 включно — `Високий`, від 50 включно — `Середній`, інакше — `Початковий`. Перевір `68`.
+
+// function getScoreLevel(score) {
+
+//     if (score >= 80) {
+//       return 'Высокий';
+//     } else if (score >= 50) {
+//       return 'Средний';
+//     } else {
+//       return 'Начальный';
+//     }
+// }
+
+// console.log(getScoreLevel(68));
+
+
+// Створи `validateRegistration(name, email, password, acceptedRules)`. Пріоритет перевірок: порожнє ім’я — `Вкажіть ім’я`; email без `@` — `Некоректний email`; пароль коротший за 8 — `Короткий пароль`; правила не прийняті — `Прийміть правила`; інакше — `Реєстрація дозволена`. Перевір `'Анна', 'anna@mail.com', 'jsStart8', true`.
+
+// function validateRegistration(name, email, password, acceptedRules) {
+//   if (name.trim() === '') {
+//     return `Вкажіть ім’я`;
+//   } else if (!email.includes('@')) {
+//     return `Некоректний email`;
+//   } else if (password.length < 8) {
+//       return `Короткий пароль`;
+//   } else if (!acceptedRules === false) {
+//     return `Прийміть правила`;
+//   } else {
+//     return `Реєстрація дозволена`;
+//   }
+// }
+
+// console.log(validateRegistration('Анна', 'anna@mail.com', 'jsStart8', true));
+
+// Є `hasUnreadMessage = false`. Якщо непрочитаних повідомлень немає, виведи `Нових повідомлень немає`.
+
+
+// const hasUnreadMessage = false;
+
+// if (!hasUnreadMessage) {
+//   console.log(`Нових повідомлень немає`);
+// }
+
+// Створи `getLessonState(isPublished, isLocked)`. Якщо урок не опублікований — `Чернетка`; якщо опублікований, але заблокований — `Заблоковано`; інакше — `Доступно`. Перевір `true, false`.
+
+
+// function getLessonState(isPublished, isLocked) {
+//  if (!isPublished) {
+//   return `Чернетка`;
+//  } else if (isLocked) {
+//   return `Заблоковано`;
+//  } else {
+//   return `Доступно`;
+//  }
+// }
+
+// console.log(getLessonState(true, false));
+
+
+// Створи `validateLogin(login)`. Після `trim()` поверни `Логін порожній`, якщо рядок порожній; `Логін закороткий`, якщо довжина менша за 4; інакше — `Логін прийнято`. Перевір `'  js  '`.
+
+// function validateLogin(login) {
+//   if (login.trim() === '') {
+//     return 'Логин Пустой';
+//   } else if (login.trim().length < 4) {
+//     return 'Логин Короткий';
+//   } else {
+//     return 'Логін прийнято';
+//   }
+// }
+
+// console.log(validateLogin('  js  '));
+
+
+// Створи `getFileType(fileName)`. Без урахування регістру поверни `JavaScript`, якщо назва закінчується на `.js`; `HTML`, якщо на `.html`; `CSS`, якщо на `.css`; інакше — `Невідомий тип`. Перевір `'STYLE.CSS'`.
+
+
+// function getFileType(fileName) {
+
+//   const normalizedFileName = fileName.toLowerCase().trim();
+
+//     if (normalizedFileName.endsWith('.js') ) {
+//       return 'JavaScript';
+//     } else if (normalizedFileName.endsWith('.html') ) {
+//       return 'HTML';
+//     } else if (normalizedFileName.endsWith('.css') ) {
+//       return 'CSS';
+//     } else {
+//       return `Невідомий тип`;
+//     }
+// }
+
+// console.log(getFileType('STYLE.CSS'));
+
+// Створи `getModuleAccess(role, isPaid, completedIntro, isBlocked)`. Заблокованому завжди повертається `Доступ заблоковано`. Ментор або адміністратор має `Повний доступ`. Студент отримує `Доступ відкрито`, тільки якщо курс оплачено й вступ завершено. Інакше — `Виконайте умови доступу`. Перевір `'student', true, true, false`.
+
+// function getModuleAccess(role, isPaid, completedIntro, isBlocked) {
+//     if (isBlocked) {
+//       return `Доступ заблоковано`;
+//     } else if (role === 'mentor' || role === 'admin') {
+//       return 'Повний доступ';
+//     } else if (isPaid && completedIntro) {
+//       return 'Доступ відкрито';
+//     } else {
+//       return `Виконайте умови доступу`;
+//     }
+// }
+
+// console.log(getModuleAccess('student', true, true, false));
+
+
+// Створи `checkUsername(username)`. Коректне ім’я має довжину від 5 до 12 символів включно та не повинно містити пробіл. Поверни `Коректне` або `Некоректне`. Перевір `'js_student'`.
+
+
+// function checkUsername(username) {
+//    if(username.trim().length >= 5 && username.trim().length <= 12) {
+//     return `Коректне`;
+//    } 
+//    return `Некоректне`;
+// }
+
+// console.log(checkUsername('js_student'));
+
+// Створи `getDeadlineStatus(daysLeft, isSubmitted)`. Якщо роботу здано — `Здано`; інакше, якщо днів не більше 0 — `Термін минув`; якщо залишився 1 день — `Останній день`; інакше — `Є час`. Перевір `1, false`.
+
+// function getDeadlineStatus(daysLeft, isSubmitted) {
+
+//     if (isSubmitted) {
+//       return `Здано`;
+//     } else if (daysLeft <= 0) {
+//         return `Термін минув`;
+//     } else if (daysLeft === 1) {
+//       return `Останній день`;
+//     } 
+//     return `Є час`;
+// }
+
+// console.log(getDeadlineStatus(-1, false));
+
+
+// Створи `checkRoute(path, isAuthenticated, role)`. Для шляхів, що починаються з `'/admin'`, потрібна роль `'admin'`; для `'/profile'` потрібна авторизація; шлях `'/'` завжди доступний; решта повертає `Сторінку не знайдено`. Перевір `'/admin/users', true, 'editor'`.
+
+// function checkRoute(path, isAuthenticated, role) {
+//     if (path.startsWith('/admin')) {
+//       return role === 'admin' ? 'Доступ разрешен' : 'Авторизуйся Собака';
+//     }
+
+//     if (path.startsWith('/profile')) {
+//         return isAuthenticated === true ? 'Доступ разрешен' : 'Авторизуйся Собака';
+//     }
+
+//     if (path === '/') {
+//         return 'Доступ разрешен';
+//     }
+
+//     return `Сторінку не знайдено`;
+// }
+
+// console.log(checkRoute('/admin/users', true, 'editor'));
