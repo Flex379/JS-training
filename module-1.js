@@ -546,7 +546,6 @@
 // Створи `findLongestWord(text)`. Не використовуй масиви або `split()`. Проходь по рядку разом із додатковим пробілом у кінці, накопичуй поточне слово й запам’ятовуй найдовше. Перевір `'learning loops builds skill'`.
 
 // function findLongestWord(text) {
-
 //   let currentWord = '';
 //   let longestWord = '';
 
@@ -617,4 +616,152 @@
 //   return result.trim();
 // }
 
-// console.log(removeDuplicateWords('code code clean code'));
+// console.log(removeDuplicateWords('code code clean code'))
+
+// Створи функцію `getFirstItem(items)`, яка повертає перший елемент масиву. Якщо масив порожній, поверни рядок `Кошик порожній`. Перевір масив `['Молоко', 'Хліб', 'Яблука']`.
+
+// function getFirstItem(items) {
+//   if (items.length === 0) {
+//     return `Кошик порожній`;
+//   } 
+//   return items[0];
+// }
+
+
+// console.log(getFirstItem(['Молоко', 'Хліб', 'Яблука']));
+
+
+// Створи `calculateAverage(ratings)`. Якщо масив порожній, поверни 0. Інакше циклом знайди суму й поділи її на кількість оцінок. Перевір `[5, 4, 5, 3, 3]`.
+
+
+// function calculateAverage(ratings) {
+//   if (ratings.length === 0) {
+//     return 0;
+//   }
+  
+//   let sum = 0;
+//   let count = 0;
+
+//   for (const rating of ratings) {
+//     if (typeof rating === 'number') {
+//           sum += rating;
+//           count += 1;
+//     } 
+//   } 
+//   return sum / count;
+// }
+
+// console.log(calculateAverage([5, 4, 5, 3, 3, 'hello']));
+
+
+// Ціни та кількості зберігаються у двох масивах з однаковими індексами. Створи `calculateCartTotal(prices, quantities)`, яка додає `price * quantity` для кожної позиції. Перевір `[80, 25, 40]` і `[2, 3, 1]`.
+
+
+// function calculateCartTotal(prices, quantities) {
+//   let total = 0;
+
+//   for (let i = 0; i < prices.length; i++) {
+//     total += prices[i] * quantities[i];
+//   }
+
+//   return total;
+// }
+
+// console.log(calculateCartTotal([80, 25, 40], [2, 3, 1]));
+
+// Створи `applyDiscount(prices, percent)`, яка повертає новий масив цін після знижки. Для округлення до двох знаків використай `Number(value.toFixed(2))`. Не використовуй `map()`. Перевір `[100, 250, 80]`, `10`.
+
+
+// function applyDiscount(prices, percent) {
+//   const newPrices = [];
+
+//   for (const price of prices) { 
+//     const discounted = price - (price * percent) / 100;
+//     newPrices.push(Number(discounted.toFixed(2)));
+//   }
+//   return newPrices;
+// }
+
+
+// console.log(applyDiscount([100, 250, 80], 17))
+
+
+// Створи `cleanTags(tags)`. Для кожного рядка прибери крайні пробіли, переведи його у нижній регістр, пропусти порожні й не додавай дублікати. Перевір `[' JavaScript ', 'web', '', 'javascript', ' WEB ']`.
+
+// function cleanTags(tags) {
+//   const newTags = [];
+
+//   for (const tag of tags) {
+//     const normalizeTag = tag.trim().toLowerCase();
+//     if (normalizeTag !== '' && !newTags.includes(normalizeTag)) {
+//       newTags.push(normalizeTag);
+//     }
+//   }
+//     return newTags;
+// }
+
+// console.log(cleanTags([' JavaScript ', 'web', '', 'javascript', ' WEB ']));
+
+
+// Створи `searchNames(names, query)`. Поверни новий масив назв, що містять запит без урахування регістру. Використай цикл та рядковий `includes()`. Перевір `['JavaScript Basics', 'React Start', 'Advanced JavaScript']`, `'script'`.
+
+
+// function searchNames(names, query) {
+//   const newNames = [];
+
+//   for (const name of names) {
+//     const normalizeName = name.toLowerCase().trim();
+//       if (normalizeName.includes(query)) {
+//         newNames.push(normalizeName);
+//       }
+//   }
+//   return newNames;
+// }
+
+// console.log(searchNames(['JavaScript Basics', 'React Start', 'Advanced JavaScript'], 'script'));
+
+
+// Створи `limitHistory(history, limit)`, яка повертає новий масив лише з останніх `limit` запитів. Початковий масив не змінюй. Перевір п’ять запитів і ліміт 3.
+
+// const history = ['HTML', 'CSS', 'JS', 'React', 'Node'];
+
+// function limitHistory(history, limit) {
+//   const lastestHistory = [];
+
+//    for (let i = history.length - limit; i < history.length; i++) {
+//       if (history[i]) {
+//         lastestHistory.push(history[i]);
+//       }
+//    }
+//    return lastestHistory;
+// }
+
+// console.log(limitHistory(history, 3));
+
+
+
+
+// const history = ['HTML', 'CSS', 'JS', 'React', 'Node'];
+
+// function limitHistory(history, limit) {
+//   const startIndex = history.length > limit ? history.length - limit : 0;
+//   return history.slice(startIndex);
+// }
+
+// console.log(limitHistory(history, 3));
+
+
+// Створи `getUnsubscribed(previous, current)`, яка повертає імена, що були у попередньому масиві, але відсутні в поточному. Перевір `['Іра', 'Макс', 'Оля']` і `['Макс', 'Оля', 'Тарас']`.
+
+function getUnsubscribed(previous, current) {
+  const unsub = [];
+
+ for (const element of previous) {
+  if (!current.includes(element)) {
+    unsub.push(element);
+  }
+ }
+ return unsub;
+}
+
+console.log(getUnsubscribed(['Іра', 'Макс', 'Оля'],  ['Макс', 'Оля', 'Тарас']));
