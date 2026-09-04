@@ -753,15 +753,197 @@
 
 // Створи `getUnsubscribed(previous, current)`, яка повертає імена, що були у попередньому масиві, але відсутні в поточному. Перевір `['Іра', 'Макс', 'Оля']` і `['Макс', 'Оля', 'Тарас']`.
 
-function getUnsubscribed(previous, current) {
-  const unsub = [];
+// function getUnsubscribed(previous, current) {
+//   const unsub = [];
 
- for (const element of previous) {
-  if (!current.includes(element)) {
-    unsub.push(element);
-  }
- }
- return unsub;
-}
+//  for (const element of previous) {
+//   if (!current.includes(element)) {
+//     unsub.push(element);
+//   }
+//  }
+//  return unsub;
+// }
 
-console.log(getUnsubscribed(['Іра', 'Макс', 'Оля'],  ['Макс', 'Оля', 'Тарас']));
+// console.log(getUnsubscribed(['Іра', 'Макс', 'Оля'],  ['Макс', 'Оля', 'Тарас']));
+
+
+// Створи `appendCopy(items, item)`. Функція має створити копію масиву, додати `item` у кінець і повернути новий масив. Початковий масив не змінюй. Перевір `['HTML', 'CSS']` і `'JavaScript'`.
+
+
+// const appendCopy = function (items, item) {
+//   const copyItems = Array.from(items);
+//   copyItems.push(item);
+//   return   copyItems;
+// }
+
+
+// console.log(appendCopy(['HTML', 'CSS'], 'JavaScript'));
+
+
+// Створи `prependCopy(items, item)`, яка повертає копію масиву з новим елементом на початку. Використай `slice()` та `unshift()`. Перевір `['Каталог', 'Контакти']` і `'Головна'`.
+
+
+// const prependCopy = function (items, item) {
+//  const copyItems = items.slice();
+// copyItems.unshift(item);
+// return copyItems;
+// }
+
+// console.log(prependCopy(['Каталог', 'Контакти'],'Головна'));
+
+
+// Створи `removeExisting(items, value)`. Поверни копію без першого входження `value`; якщо значення немає, поверни незмінену копію. Перевір `['new', 'draft', 'ready']` і `'draft'`.
+
+
+// const removeExisting = function (items, value) {
+//   const copyItems = items.slice();
+//   const atIndex = items.indexOf(value);
+
+//  if (atIndex !== -1) {
+//    copyItems.splice(atIndex, 1);
+//  }
+//  return copyItems;
+// }
+
+// console.log(removeExisting(['new', 'draft', 'ready'],'draft'));
+
+
+// Створи `createTagList(...tags)`. Rest-параметр має зібрати всі передані теги в масив. Поверни новий масив, у якому кожен тег починається із `#`. Використай звичайний цикл. Перевір `'js'`, `'frontend'`, `'practice'`.
+
+
+// function createTagList(...tags) {
+//   const result = [];
+
+//   for (const tag of tags) {
+//     result.push(`#${tag}`)
+//   }
+
+
+//   return result;
+// }
+
+// console.log(createTagList('js', 'frontend', 'practice'));
+
+
+
+// Створи `indexById(items)`. Перетвори масив об’єктів на об’єкт-довідник: ключем має бути `id`, а значенням — копія відповідного запису. Вважай ID унікальними. Перевір два записи. [{ id: 10, title: 'A' }, { id: 20, title: 'B' }]
+
+
+
+// function indexById(items) {
+//   let newObj = {};
+
+//   for (const item of items) {
+//     newObj[item.id] = item;
+//   }
+
+
+//   return newObj;
+// }
+
+
+// console.log(indexById([{ id: 10, title: 'A' }, { id: 20, title: 'B' }]));
+
+
+// Є масив `users` з `id` і `name` та масив `statuses` з `userId` і `online`. Створи `attachStatuses(users, statuses)`, яка повертає новий масив користувачів із полем `online`. Якщо статус не знайдено, встанови `false`. 
+// const users = [{ id: 1, name: 'Анна' }, { id: 2, name: 'Ігор' }];  [{ userId: 2, online: true }])
+
+// const users = [{ id: 1, name: 'Анна' }, { id: 2, name: 'Ігор' }];
+
+
+// function attachStatuses(users, statuses) {
+//   const newUser = [];
+
+//   for (const user of users) {
+
+//      let online = false
+
+//         for (const status of statuses) {
+//           if (user.id === status.userId) {
+//             online = status.online;
+//             break;
+//           }
+//         }
+//         newUser.push({...user,online});
+//   }
+//   return newUser;
+// }
+
+
+// console.log(attachStatuses(users, [{ userId: 2, online: true }]));
+
+
+// Створи `getFilledValues(data)`. Отримай значення через `Object.values()` і звичайним циклом поверни новий масив без порожніх рядків. Нуль і `false` вважай заповненими значеннями. Перевір `{ name: 'Анна', city: '', attempts: 0, subscribed: false }`.
+
+
+
+// function getFilledValues(data) {
+//   const values = Object.values(data);
+//  const newValues = [];
+
+//  for (const value of values) {
+//    if (value !== '') {
+//       newValues.push(value);
+//    }
+//  }
+
+//  return newValues;
+// }
+
+// console.log(getFilledValues({ name: 'Анна', city: '', attempts: 0, subscribed: false }));
+
+
+// Створи `changeCity(user, city)`. Об’єкт користувача має вкладений об’єкт `address`. Поверни новий об’єкт користувача з новим `address.city`, зберігши інші поля користувача й адреси. Не змінюй жоден вхідний об’єкт. city = 'Львів'
+
+// const user = {id: 1, name: 'Олег', address: {city: 'Київ', street: 'Садова' } };
+
+
+// function changeCity(user, city) {
+//   // const newUser = structuredClone(user);
+
+//   // newUser.address.city = city;
+  
+//   // return newUser;
+
+
+//  return {...user, address: {...user.address, city}};
+// }
+
+// console.log(changeCity(user, 'Львів'))
+
+
+// Створи `applyDefaults(defaults, custom)`. Функція має об’єднати два об’єкти так, щоб властивості `custom` замінювали однойменні властивості `defaults`. Перевір стандартні `{ theme: 'light', pageSize: 10 }` та користувацькі `{ pageSize: 25 }`.
+//
+
+
+// function applyDefaults(defaults, custom) {
+// return {...defaults, ...custom };
+// }
+
+// console.log(applyDefaults({ theme: 'light', pageSize: 10 }, { pageSize: 25 }));
+
+
+// Створи `validateSignup(form)`. Поверни об’єкт помилок: додай `name`, якщо ім’я після `trim()` коротше 2 символів; `email`, якщо немає `@`; `password`, якщо пароль коротший 8 символів. Коректні поля не додавай. Перевір некоректну форму.
+
+
+
+// const validateSignup = function (form) {
+// const errors = {};
+
+// if (form.name.trim().length < 2) {
+//   errors.name = `Имя короткое`;
+// }
+
+// if (!form.email.includes('@')) {
+//   errors.email = 'Некоректный Email';
+// }
+
+// if (form.password.length < 8) {
+//   errors.password = 'Минимум 8 символов'
+// }
+
+// return errors;
+// }
+
+
+// console.log(validateSignup({ name: ' A ', email: 'mail.com', password: '1234' }));
