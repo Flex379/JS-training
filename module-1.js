@@ -12,7 +12,7 @@
 
 // const message = `Студент: ${name} | Возраст: ${age} | Группа: ${group}`;
 
-// console.log(message); 
+// console.log(message);
 
 // Створи змінну `age` зі значенням 16. Виведи її в консоль. Переконайся, що значення збережено як число, а не як рядок.
 
@@ -99,7 +99,6 @@
 
 // console.log(fullName);
 
-
 // Є `fileName = 'lesson-notes.md'`. Отримай останні три символи, щоб дістати розширення `'.md'`.
 
 // const fileName = 'lesson-notes.md';
@@ -108,7 +107,6 @@
 // console.log(extension);
 
 // Є `email = 'student@example.com'`. Залиш видимими перші дві літери імені користувача та весь домен. Решту імені заміни п'ятьма зірочками. Очікуваний формат: `st*****@example.com`.
-
 
 // const email = 'student@example.com';
 
@@ -172,7 +170,7 @@
 // console.log(firstPart);
 // console.log(secondPart);
 
-// DAY 2 
+// DAY 2
 
 // Створи змінні `firstNumber = 18` і `secondNumber = 11`. За допомогою оператора `>` перевір, чи перше число більше за друге. Виведи результат порівняння в консоль.
 
@@ -213,7 +211,6 @@
 
 // console.log(normalizeTitle('  JS-Basics  '));
 
-
 // function areTitlesEqual(firstTitle, secondTitle) {
 //   return normalizeTitle(firstTitle) === normalizeTitle(secondTitle);
 // }
@@ -250,7 +247,6 @@
 
 // console.log(isFirstLoginLonger('  coder_one  ', 'dev2'));
 
-
 // Створи функцію `createPersonalCode(firstName, lastName, year)`. Вона має взяти перші дві літери імені, перші дві літери прізвища, перевести їх у верхній регістр та додати останні дві цифри року. Для `'Marta'`, `'Stone'`, `2026` очікується `'MAST26'`.
 
 // function createPersonalCode(firstName, lastName, year) {
@@ -281,8 +277,7 @@
 //    return `First: ${firstTextLength} | Second: ${secondTextLength} | First longer: ${isFirstLonger}`;
 // }
 
-// console.log(makeLengthReport('terminal', 'mouse')); 
-
+// console.log(makeLengthReport('terminal', 'mouse'));
 
 // Створи функцію `hasExtension(fileName, extension)`. Функція повинна перевіряти закінчення назви файлу. Виклич її з `'notes.pdf'` і `'.pdf'`.
 
@@ -297,7 +292,7 @@
 // function getDomain(email) {
 //   const atIndex = email.indexOf('@');
 //   const normalizeDomain = email.slice(atIndex + 1).toLowerCase();
-  
+
 //   return normalizeDomain;
 // }
 
@@ -305,11 +300,9 @@
 //   return getDomain(firstEmail) === getDomain(secondEmail);
 // }
 
-
 // console.log(haveSameDomain('one@School.ORG', 'two@school.org'));
 
 // DAY 3 //
-
 
 // Створи змінну `isLoggedIn` зі значенням `true`. Якщо користувач увійшов у систему, виведи `Кабінет відкрито`.
 
@@ -334,7 +327,6 @@
 
 // console.log(getScoreLevel(68));
 
-
 // Створи `validateRegistration(name, email, password, acceptedRules)`. Пріоритет перевірок: порожнє ім’я — `Вкажіть ім’я`; email без `@` — `Некоректний email`; пароль коротший за 8 — `Короткий пароль`; правила не прийняті — `Прийміть правила`; інакше — `Реєстрація дозволена`. Перевір `'Анна', 'anna@mail.com', 'jsStart8', true`.
 
 // function validateRegistration(name, email, password, acceptedRules) {
@@ -355,7 +347,6 @@
 
 // Є `hasUnreadMessage = false`. Якщо непрочитаних повідомлень немає, виведи `Нових повідомлень немає`.
 
-
 // const hasUnreadMessage = false;
 
 // if (!hasUnreadMessage) {
@@ -363,7 +354,6 @@
 // }
 
 // Створи `getLessonState(isPublished, isLocked)`. Якщо урок не опублікований — `Чернетка`; якщо опублікований, але заблокований — `Заблоковано`; інакше — `Доступно`. Перевір `true, false`.
-
 
 // function getLessonState(isPublished, isLocked) {
 //  if (!isPublished) {
@@ -376,7 +366,6 @@
 // }
 
 // console.log(getLessonState(true, false));
-
 
 // Створи `validateLogin(login)`. Після `trim()` поверни `Логін порожній`, якщо рядок порожній; `Логін закороткий`, якщо довжина менша за 4; інакше — `Логін прийнято`. Перевір `'  js  '`.
 
@@ -392,9 +381,7 @@
 
 // console.log(validateLogin('  js  '));
 
-
 // Створи `getFileType(fileName)`. Без урахування регістру поверни `JavaScript`, якщо назва закінчується на `.js`; `HTML`, якщо на `.html`; `CSS`, якщо на `.css`; інакше — `Невідомий тип`. Перевір `'STYLE.CSS'`.
-
 
 // function getFileType(fileName) {
 
@@ -429,14 +416,12 @@
 
 // console.log(getModuleAccess('student', true, true, false));
 
-
 // Створи `checkUsername(username)`. Коректне ім’я має довжину від 5 до 12 символів включно та не повинно містити пробіл. Поверни `Коректне` або `Некоректне`. Перевір `'js_student'`.
-
 
 // function checkUsername(username) {
 //    if(username.trim().length >= 5 && username.trim().length <= 12) {
 //     return `Коректне`;
-//    } 
+//    }
 //    return `Некоректне`;
 // }
 
@@ -452,12 +437,11 @@
 //         return `Термін минув`;
 //     } else if (daysLeft === 1) {
 //       return `Останній день`;
-//     } 
+//     }
 //     return `Є час`;
 // }
 
 // console.log(getDeadlineStatus(-1, false));
-
 
 // Створи `checkRoute(path, isAuthenticated, role)`. Для шляхів, що починаються з `'/admin'`, потрібна роль `'admin'`; для `'/profile'` потрібна авторизація; шлях `'/'` завжди доступний; решта повертає `Сторінку не знайдено`. Перевір `'/admin/users', true, 'editor'`.
 
@@ -505,11 +489,10 @@
 
 // console.log(countVowels('Education'));
 
-
 // За допомогою циклу `for` виведи числа від 5 до 1, а після завершення циклу — слово `Старт!`.
 
 // function start (seconds) {
-  
+
 //   for (let i = seconds; i > 0; i--) {
 //     console.log(i);
 //   }
@@ -569,9 +552,7 @@
 
 // console.log(findLongestWord('learning loops builds skillsadasasdads'));
 
-
 // Створи `makeWordLengthReport(text)`. Без `split()` сформуй рядок виду `Code(4) every(5) day(3)`. Між елементами має бути один пробіл. Перевір `'Code every day'`.
-
 
 // function makeWordLengthReport(text) {
 //   let currentWord = '';
@@ -604,11 +585,11 @@
 //     } else {
 //       if (!result.includes(currentWord)) {
 //         result += `${currentWord} `;
-        
+
 //       }
 //       currentWord = '';
 //     }
-//   } 
+//   }
 //    if (!result.includes(currentWord)) {
 //         result += `${currentWord} `;
 //       }
@@ -623,22 +604,19 @@
 // function getFirstItem(items) {
 //   if (items.length === 0) {
 //     return `Кошик порожній`;
-//   } 
+//   }
 //   return items[0];
 // }
 
-
 // console.log(getFirstItem(['Молоко', 'Хліб', 'Яблука']));
 
-
 // Створи `calculateAverage(ratings)`. Якщо масив порожній, поверни 0. Інакше циклом знайди суму й поділи її на кількість оцінок. Перевір `[5, 4, 5, 3, 3]`.
-
 
 // function calculateAverage(ratings) {
 //   if (ratings.length === 0) {
 //     return 0;
 //   }
-  
+
 //   let sum = 0;
 //   let count = 0;
 
@@ -646,16 +624,14 @@
 //     if (typeof rating === 'number') {
 //           sum += rating;
 //           count += 1;
-//     } 
-//   } 
+//     }
+//   }
 //   return sum / count;
 // }
 
 // console.log(calculateAverage([5, 4, 5, 3, 3, 'hello']));
 
-
 // Ціни та кількості зберігаються у двох масивах з однаковими індексами. Створи `calculateCartTotal(prices, quantities)`, яка додає `price * quantity` для кожної позиції. Перевір `[80, 25, 40]` і `[2, 3, 1]`.
-
 
 // function calculateCartTotal(prices, quantities) {
 //   let total = 0;
@@ -671,20 +647,17 @@
 
 // Створи `applyDiscount(prices, percent)`, яка повертає новий масив цін після знижки. Для округлення до двох знаків використай `Number(value.toFixed(2))`. Не використовуй `map()`. Перевір `[100, 250, 80]`, `10`.
 
-
 // function applyDiscount(prices, percent) {
 //   const newPrices = [];
 
-//   for (const price of prices) { 
+//   for (const price of prices) {
 //     const discounted = price - (price * percent) / 100;
 //     newPrices.push(Number(discounted.toFixed(2)));
 //   }
 //   return newPrices;
 // }
 
-
 // console.log(applyDiscount([100, 250, 80], 17))
-
 
 // Створи `cleanTags(tags)`. Для кожного рядка прибери крайні пробіли, переведи його у нижній регістр, пропусти порожні й не додавай дублікати. Перевір `[' JavaScript ', 'web', '', 'javascript', ' WEB ']`.
 
@@ -702,9 +675,7 @@
 
 // console.log(cleanTags([' JavaScript ', 'web', '', 'javascript', ' WEB ']));
 
-
 // Створи `searchNames(names, query)`. Поверни новий масив назв, що містять запит без урахування регістру. Використай цикл та рядковий `includes()`. Перевір `['JavaScript Basics', 'React Start', 'Advanced JavaScript']`, `'script'`.
-
 
 // function searchNames(names, query) {
 //   const newNames = [];
@@ -719,7 +690,6 @@
 // }
 
 // console.log(searchNames(['JavaScript Basics', 'React Start', 'Advanced JavaScript'], 'script'));
-
 
 // Створи `limitHistory(history, limit)`, яка повертає новий масив лише з останніх `limit` запитів. Початковий масив не змінюй. Перевір п’ять запитів і ліміт 3.
 
@@ -738,9 +708,6 @@
 
 // console.log(limitHistory(history, 3));
 
-
-
-
 // const history = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 
 // function limitHistory(history, limit) {
@@ -749,7 +716,6 @@
 // }
 
 // console.log(limitHistory(history, 3));
-
 
 // Створи `getUnsubscribed(previous, current)`, яка повертає імена, що були у попередньому масиві, але відсутні в поточному. Перевір `['Іра', 'Макс', 'Оля']` і `['Макс', 'Оля', 'Тарас']`.
 
@@ -766,9 +732,7 @@
 
 // console.log(getUnsubscribed(['Іра', 'Макс', 'Оля'],  ['Макс', 'Оля', 'Тарас']));
 
-
 // Створи `appendCopy(items, item)`. Функція має створити копію масиву, додати `item` у кінець і повернути новий масив. Початковий масив не змінюй. Перевір `['HTML', 'CSS']` і `'JavaScript'`.
-
 
 // const appendCopy = function (items, item) {
 //   const copyItems = Array.from(items);
@@ -776,12 +740,9 @@
 //   return   copyItems;
 // }
 
-
 // console.log(appendCopy(['HTML', 'CSS'], 'JavaScript'));
 
-
 // Створи `prependCopy(items, item)`, яка повертає копію масиву з новим елементом на початку. Використай `slice()` та `unshift()`. Перевір `['Каталог', 'Контакти']` і `'Головна'`.
-
 
 // const prependCopy = function (items, item) {
 //  const copyItems = items.slice();
@@ -791,9 +752,7 @@
 
 // console.log(prependCopy(['Каталог', 'Контакти'],'Головна'));
 
-
 // Створи `removeExisting(items, value)`. Поверни копію без першого входження `value`; якщо значення немає, поверни незмінену копію. Перевір `['new', 'draft', 'ready']` і `'draft'`.
-
 
 // const removeExisting = function (items, value) {
 //   const copyItems = items.slice();
@@ -807,9 +766,7 @@
 
 // console.log(removeExisting(['new', 'draft', 'ready'],'draft'));
 
-
 // Створи `createTagList(...tags)`. Rest-параметр має зібрати всі передані теги в масив. Поверни новий масив, у якому кожен тег починається із `#`. Використай звичайний цикл. Перевір `'js'`, `'frontend'`, `'practice'`.
-
 
 // function createTagList(...tags) {
 //   const result = [];
@@ -818,17 +775,12 @@
 //     result.push(`#${tag}`)
 //   }
 
-
 //   return result;
 // }
 
 // console.log(createTagList('js', 'frontend', 'practice'));
 
-
-
 // Створи `indexById(items)`. Перетвори масив об’єктів на об’єкт-довідник: ключем має бути `id`, а значенням — копія відповідного запису. Вважай ID унікальними. Перевір два записи. [{ id: 10, title: 'A' }, { id: 20, title: 'B' }]
-
-
 
 // function indexById(items) {
 //   let newObj = {};
@@ -837,19 +789,15 @@
 //     newObj[item.id] = item;
 //   }
 
-
 //   return newObj;
 // }
 
-
 // console.log(indexById([{ id: 10, title: 'A' }, { id: 20, title: 'B' }]));
 
-
-// Є масив `users` з `id` і `name` та масив `statuses` з `userId` і `online`. Створи `attachStatuses(users, statuses)`, яка повертає новий масив користувачів із полем `online`. Якщо статус не знайдено, встанови `false`. 
+// Є масив `users` з `id` і `name` та масив `statuses` з `userId` і `online`. Створи `attachStatuses(users, statuses)`, яка повертає новий масив користувачів із полем `online`. Якщо статус не знайдено, встанови `false`.
 // const users = [{ id: 1, name: 'Анна' }, { id: 2, name: 'Ігор' }];  [{ userId: 2, online: true }])
 
 // const users = [{ id: 1, name: 'Анна' }, { id: 2, name: 'Ігор' }];
-
 
 // function attachStatuses(users, statuses) {
 //   const newUser = [];
@@ -869,13 +817,9 @@
 //   return newUser;
 // }
 
-
 // console.log(attachStatuses(users, [{ userId: 2, online: true }]));
 
-
 // Створи `getFilledValues(data)`. Отримай значення через `Object.values()` і звичайним циклом поверни новий масив без порожніх рядків. Нуль і `false` вважай заповненими значеннями. Перевір `{ name: 'Анна', city: '', attempts: 0, subscribed: false }`.
-
-
 
 // function getFilledValues(data) {
 //   const values = Object.values(data);
@@ -892,29 +836,24 @@
 
 // console.log(getFilledValues({ name: 'Анна', city: '', attempts: 0, subscribed: false }));
 
-
 // Створи `changeCity(user, city)`. Об’єкт користувача має вкладений об’єкт `address`. Поверни новий об’єкт користувача з новим `address.city`, зберігши інші поля користувача й адреси. Не змінюй жоден вхідний об’єкт. city = 'Львів'
 
 // const user = {id: 1, name: 'Олег', address: {city: 'Київ', street: 'Садова' } };
-
 
 // function changeCity(user, city) {
 //   // const newUser = structuredClone(user);
 
 //   // newUser.address.city = city;
-  
-//   // return newUser;
 
+//   // return newUser;
 
 //  return {...user, address: {...user.address, city}};
 // }
 
 // console.log(changeCity(user, 'Львів'))
 
-
 // Створи `applyDefaults(defaults, custom)`. Функція має об’єднати два об’єкти так, щоб властивості `custom` замінювали однойменні властивості `defaults`. Перевір стандартні `{ theme: 'light', pageSize: 10 }` та користувацькі `{ pageSize: 25 }`.
 //
-
 
 // function applyDefaults(defaults, custom) {
 // return {...defaults, ...custom };
@@ -922,10 +861,7 @@
 
 // console.log(applyDefaults({ theme: 'light', pageSize: 10 }, { pageSize: 25 }));
 
-
 // Створи `validateSignup(form)`. Поверни об’єкт помилок: додай `name`, якщо ім’я після `trim()` коротше 2 символів; `email`, якщо немає `@`; `password`, якщо пароль коротший 8 символів. Коректні поля не додавай. Перевір некоректну форму.
-
-
 
 // const validateSignup = function (form) {
 // const errors = {};
@@ -945,5 +881,87 @@
 // return errors;
 // }
 
-
 // console.log(validateSignup({ name: ' A ', email: 'mail.com', password: '1234' }));
+
+// З масиву товарів { id, title, price } треба отримати простий масив назв, щоб підставити його в підказку пошуку. Напиши стрілочну функцію getTitles, яка використовує map.
+
+// [{ id: 1, title: 'Миша' }, { id: 2, title: 'Монітор' }]
+
+// const getTitles = (products) => {
+//   const titleArr = products.map((el, id, arr) => {
+//    return el.title;
+//   });
+//   return titleArr;
+// }
+
+// const getTitles = products => products.map(el => el.title);
+
+// console.log(
+//   getTitles([
+//     { id: 1, title: 'Миша' },
+//     { id: 2, title: 'Монітор' },
+//   ])
+// );
+
+// Кожна стаття має масив тегів. Для хмари тегів потрібен один плоский список (повтори поки що залишаємо). Напиши функцію collectTags(articles)
+
+// const collectTags = articles => articles.flatMap(article => article.tags);
+
+// console.log(collectTags([{ tags: ['js', 'css'] }, { tags: ['html'] }]));
+
+// Постачальник підняв ціни на певний відсоток. Напиши функцію applyMarkup(prices, percent), яка повертає новий масив цін із націнкою, округлених до 2 знаків. Вихідний масив не змінюється.|
+
+// const applyMarkup = (prices, percent) => {
+//   const newPrices = prices.map((el, idx, arr) => {
+//     return Number((el * (1 + percent / 100)).toFixed(2));
+//   });
+//   return newPrices;
+// };
+
+// ------------------------------
+
+// const applyMarkup = (prices, percent) =>
+//   prices.map(el => Number((el * (1 + percent / 100)).toFixed(2)));
+
+// console.log(applyMarkup([100, 250], 10));
+
+// Для звіту треба зібрати всі товарні позиції з масиву замовлень в один масив, додавши до кожної позиції номер замовлення. Напиши функцію collectOrderItems(orders), де замовлення — { id, items: [{ title, qty }] }.
+
+// const collectOrderItems = orders => {
+//   const collectOrders = orders.flatMap(order => {
+//     return order.items.map(item => {
+//       return { ...item, orderId: order.id };
+//     });
+//   });
+//   return collectOrders;
+// };
+
+// -------------------------------
+
+// const collectOrderItems = orders =>
+//   orders.flatMap(order =>
+//     order.items.map(item => ({ ...item, orderId: order.id }))
+//   );
+
+// console.log(
+//   collectOrderItems([
+//     { id: 10, items: [{ title: 'Миша', qty: 1 }] },
+//     { id: 11, items: [{ title: 'Клавиатура', qty: 3 }] },
+//     { id: 11, items: [{ title: 'Ведро', qty: 5 }] },
+//   ])
+// );
+
+// flatMap вміє відкидати елементи: якщо колбек повертає порожній масив, елемент зникає. Напиши функцію getDeliveredCities(orders), яка повертає міста лише доставлених замовлень (status === 'delivered'), використавши один flatMap.
+
+// const getDeliveredCities = orders =>
+//   orders.flatMap(order => (order.status === 'delivered' ? order.city : []));
+
+// const getDeliveredCities = orders =>
+//   orders.filter(order => order.status === 'deliverd').map(order => order.city);
+
+// console.log(
+//   getDeliveredCities([
+//     { city: 'Київ', status: 'delivered' },
+//     { city: 'Львів', status: 'new' },
+//   ])
+// );
