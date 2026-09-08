@@ -965,3 +965,87 @@
 //     { city: 'Львів', status: 'new' },
 //   ])
 // );
+
+// Створи новий масив, у якому кожна ціна буде зменшена на 10%.
+
+// const prices = [100, 250, 80, 500, 120];
+
+// const newPrices = prices => {
+//   return prices.reduce((acc, el, idx, arr) => {
+//     acc.push(el * 0.9);
+//     return acc;
+//   }, []);
+// };
+
+// console.log(newPrices(prices));
+
+// Отримай масив, який містить тільки імена користувачів.
+
+// Є масив користувачів:
+
+// const users = [
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 17 },
+//   { name: 'Charlie', age: 30 },
+// ];
+
+// const usersFirstName = users => {
+//   return users.reduce((acc, user) => {
+//     acc.push(user.name);
+//     return acc;
+//   }, []);
+// };
+
+// console.log(usersFirstName(users));
+
+// const users = [
+//   { name: 'Alice', age: 25 },
+//   { name: 'Bob', age: 17 },
+//   { name: 'Charlie', age: 30 },
+// ];
+
+// Використовуючи масив користувачів із попередньої задачі, отримай тільки користувачів віком 18 років і старше.
+
+// const usersByAge = users => users.filter(user => user.age >= 18);
+
+// const usersByAge = users => {
+//   return users.reduce((acc, user) => {
+//     if (user.age >= 18) {
+//       acc.push(user);
+//     }
+//     return acc;
+//   }, []);
+// };
+
+// console.log(usersByAge(users));
+
+// const products = [
+//   { name: 'Phone', price: 1000, discount: 10 },
+//   { name: 'Mouse', price: 100, discount: 20 },
+//   { name: 'Keyboard', price: 200, discount: 0 },
+// ];
+
+// Створи новий масив, де кожен елемент має name і finalPrice. finalPrice — ціна після знижки.
+
+// const getProductsWithDiscount = products => {
+//   return products.map(product => {
+//     return {
+//       name: product.name,
+//       finalPrice: product.price * (1 - product.discount / 100),
+//     };
+//   });
+// };
+
+// -----------------------------------
+
+// const getProductsWithDiscount = products => {
+//   return products.reduce((acc, product) => {
+//     acc.push({
+//       name: product.name,
+//       finalPrice: product.price * (1 - product.discount / 100),
+//     });
+//     return acc;
+//   }, []);
+// };
+
+// console.log(getProductsWithDiscount(products));
