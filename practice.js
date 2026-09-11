@@ -1049,3 +1049,200 @@
 // };
 
 // console.log(getProductsWithDiscount(products));
+
+//Напиши функцію конструктор User для створення користувача з такими властивостями
+//a. userName - ім'я, рядок
+//b. age - вік, число
+//c. numbersOfPost - кількість постів, число
+//d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+
+//Додай метод getInfo(), який повертає рядок:
+// `Користувачеві ${} ${} років і в нього ${} публікацій.`
+
+// Створіть метод getInfo(), який повертає ім’я та вік користувача.
+
+// const user = {
+//   name: 'Alice',
+//   age: 28,
+
+//   getInfo() {
+//     return `${this.name} ${this.age}`;
+//   },
+// };
+
+// console.log(user.getInfo());
+
+// Створіть notificationService.send() і передайте його у execute(). Збережіть контекст
+
+// const notificationService = {
+//   prefix: 'NOTIFICATION',
+//   send() {
+//     return this.prefix;
+//   },
+// };
+
+// const execute = cb => cb();
+
+// console.log(execute(notificationService.send.bind(notificationService)));
+
+// const messenger = {
+//   sender: 'Shop Bot',
+//   send(channel, text) {
+//     return `[${channel}] ${this.sender}: ${text}`;
+//   },
+// };
+
+// const sendToSms = messenger.send.bind(messenger, 'SMS');
+
+// console.log(sendToSms('Готово'));
+
+// 🟢 Розминочна — Задача 1
+// Створити клас Animal з полями name та sound.
+// Метод makeSound() виводить фразу в консоль.
+//
+// Вхідні дані:
+
+// class Animal {
+//   constructor(name, sound) {
+//     this.name = name;
+//     this.sound = sound;
+//   }
+
+//   makeSound() {
+//     return `${this.name} каже ${this.sound}`;
+//   }
+// }
+
+// const cat = new Animal('Барсик', 'Няв');
+
+// const dog = new Animal('Рекс', 'Гав');
+// console.log(cat.makeSound()); // "Барсик каже Няв"
+// console.log(dog.makeSound()); // "Рекс каже Гав"
+
+// 🟡 Середня — Задача 2
+// Створити клас Rectangle з полями width та height.
+// Методи getArea() та getPerimeter().
+//
+// Вхідні дані:
+
+// const rect = new Rectangle(5, 10);
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   getArea() {
+//     return this.width * this.height;
+//   }
+
+//   getPerimeter() {
+//     return (this.width + this.height) * 2;
+//   }
+// }
+
+// console.log(rect.getArea()); // 50
+// console.log(rect.getPerimeter()); // 30
+
+// 🔴 Складніша — Задача 5
+// Клас Circle з полем radius.
+// Методи getArea() та getCircumference() (округлити до 2 знаків).
+//
+// Вхідні дані:
+
+// class Circle {
+//   constructor(radius) {
+//     this.radius = radius;
+//   }
+
+//   getArea() {
+//     return Number((this.radius ** 2 * Math.PI).toFixed(2));
+//   }
+
+//   getCircumference() {
+//     return Number((this.radius * 2 * Math.PI).toFixed(2));
+//   }
+// }
+
+// const circle = new Circle(4);
+
+// console.log(circle.getArea()); // 50.27
+// console.log(circle.getCircumference()); // 25.13
+
+// 🟢 Розминочна — Задача 3
+// Клас Person з полями firstName та lastName.
+// Метод getFullName() повертає "Ім'я Прізвище".
+//
+// Вхідні дані:
+
+// class Person {
+//   constructor(firstName, lastName) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//   }
+
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// }
+
+// const user = new Person('Андрій', 'Ковальчук');
+// console.log(user.getFullName()); // "Андрій Ковальчук"
+
+// 🔴 Складніша — Задача 6
+// Клас BankAccount з полем balance (за замовчуванням 0).
+// Метод deposit(amount) збільшує баланс.
+// Метод withdraw(amount) зменшує баланс, але НЕ повинен йти в мінус —
+// якщо грошей не вистачає, вивести в консоль "Недостатньо коштів"
+// і не змінювати баланс.
+//
+// Вхідні дані:
+
+// class BankAccount {
+//   constructor(balance = 0) {
+//     this.balance = balance;
+//     this.transactions = [];
+//   }
+
+//   deposit(amount) {
+//     if (amount > 0) {
+//       this.balance += amount;
+//       const transaction = this.createTransaction(amount, 'deposit');
+//       this.transactions.push(transaction);
+//     }
+//   }
+
+//   withdraw(amount) {
+//     if (amount > this.balance) {
+//       return 'Недостатньо коштів';
+//     }
+//     this.balance -= amount;
+
+//     const transaction = this.createTransaction(amount, 'withdraw');
+//     this.transactions.push(transaction);
+//   }
+
+//   createTransaction(amount, type) {
+//     return {
+//       amount,
+//       type,
+//       balance: this.balance,
+//     };
+//   }
+
+//   getTransactions() {
+//     return this.transactions;
+//   }
+// }
+
+// const account = new BankAccount(100);
+
+// account.deposit(50);
+// console.log(account.balance); // 150
+
+// account.withdraw(200); // "Недостатньо коштів"
+// console.log(account.balance); // 150 (не змінився)
+
+// account.withdraw(150);
+// console.log(account.balance); // 0
