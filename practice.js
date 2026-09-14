@@ -1246,3 +1246,94 @@
 
 // account.withdraw(150);
 // console.log(account.balance); // 0
+
+// Магазин змінив ціну на навушники. Картка товару вже є в розмітці — треба оновити текст у ній.
+
+// Що зробити:
+// Знайти заголовок і ціну за їхніми id через getElementById.
+// Вивести в консоль поточну назву товару.
+// Замінити текст ціни на «999 грн»
+
+// const cardTitle = document.querySelector('#title');
+
+// console.log(cardTitle.textContent);
+
+// const cardPrice = document.querySelector('#price');
+
+// cardPrice.textContent = '999 грн';
+
+// Що зробити:
+// Прочитати href двома способами
+// Вивести обидва значення й порівняти.
+// Додати атрибути target="_blank" і rel="noopener".
+// Перевірити через hasAttribute, що target справді з'явився.
+
+// PDF-інструкція має відкриватися в новій вкладці.
+
+// const pdfLinkRef = document.querySelector('#docs');
+
+// console.dir(pdfLinkRef.getAttribute('href'));
+// console.dir(pdfLinkRef.href);
+
+// pdfLinkRef.setAttribute('target', '_blank');
+// pdfLinkRef.setAttribute('rel', 'noopener nofollow noreferrer');
+
+// console.log(pdfLinkRef.hasAttribute('target'));
+// console.log(pdfLinkRef.hasAttribute('rel'));
+
+// Компанія оновила логотип. Треба підмінити файл і текстовий опис картинки.
+
+// Що зробити:
+// Знайти зображення.
+// Змінити src на /img/logo-2026.svg і alt на «Логотип компанії».
+// Вивести в консоль значення атрибута width.
+
+// const refs = {
+//   logoImg: document.querySelector('img'),
+// };
+
+// refs.logoImg.src = '/img/logo-2026.svg';
+// refs.logoImg.alt = 'Логотип компании';
+
+// console.log(refs.logoImg.width);
+
+// Стартує розпродаж: усі ціни треба перерахувати й показати нові, а старі зберегти в розмітці для закресленої ціни.
+
+// Що зробити:
+// Знайти всі картки .product.
+// Для кожної взяти data-price, порахувати −20% і округлити.
+// Записати стару ціну в data-old-price, нову — в data-price.
+// Оновити текст у .price всередині картки.
+
+// const refs = {
+//   cardProduct: document.querySelectorAll('.product'),
+// };
+
+// refs.cardProduct.forEach(el => {
+//   const oldPrice = Number(el.dataset.price);
+//   const newPrice = Math.round(oldPrice * 0.8);
+//   el.dataset.oldPrice = oldPrice;
+//   el.dataset.price = newPrice;
+//   el.querySelector('span').textContent = `${newPrice} грн`;
+// });
+
+// Склад передав нові залишки. Позиції з нульовим залишком мають зникнути з каталогу.
+
+// Що зробити:
+// Перебрати всі картки .card.
+// Видалити ті, у яких data-stock дорівнює 0.
+// Вивести, скільки карток лишилось.
+
+// const refs = {
+//   cards: document.querySelectorAll('.card'),
+// };
+
+// refs.cards.forEach(card => {
+//   if (Number(card.dataset.stock) === 0) {
+//     card.remove();
+//   }
+// });
+
+// refs.cards = document.querySelectorAll('.card');
+
+// console.log(refs.cards.length);
