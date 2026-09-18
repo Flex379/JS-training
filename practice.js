@@ -1337,3 +1337,222 @@
 // refs.cards = document.querySelectorAll('.card');
 
 // console.log(refs.cards.length);
+
+// Стандартний елемент форми входу: око біля поля пароля перемикає видимість введеного тексту.
+
+// Що зробити:
+// Повісити обробник click на кнопку.
+// Перемикати type поля між password і text.
+// Змінювати текст кнопки на «Показати» / «Сховати».
+// Оновлювати aria-pressed, щоб стан був зрозумілий і скрінрідеру.
+
+// const refs = {
+//   toggleBtn: document.querySelector('#toggle'),
+//   input: document.querySelector('#pass'),
+// };
+
+// refs.toggleBtn.addEventListener('click', onToggleBtnClick);
+
+// function onToggleBtnClick(event) {
+//   console.log(refs.input.type);
+//   const isTypePassword = refs.input.type === 'password';
+
+//   refs.input.type = isTypePassword ? 'text' : 'password';
+
+//   refs.toggleBtn.textContent = isTypePassword ? 'Сховати' : 'Показати';
+
+//   refs.toggleBtn.ariaPressed = true;
+// }
+
+// Форма не має відправлятись, якщо поля заповнені неправильно. Помилки показуємо під конкретними полями.
+
+// Що зробити:
+// Повісити обробник submit на форму і скасувати стандартну відправку.
+// Очистити попередні тексти помилок.
+// Перевірити: імʼя мінімум 2 символи, пошта містить @, пароль від 8 символів.
+// Вивести кожну помилку у відповідний span[data-error].
+// Якщо помилок немає — залогувати «форма валідна».
+
+// const refs = {
+//   signUpForm: document.querySelector('#signup'),
+//   signupErrorFields: document.querySelectorAll('.error'),
+// };
+
+// refs.signUpForm.addEventListener('submit', onSignupFormSubmit);
+
+// function onSignupFormSubmit(event) {
+//   event.preventDefault();
+
+//   refs.signupErrorFields.forEach(errorField => {
+//     errorField.textContent = '';
+//   });
+
+//   const errors = [];
+
+//   const { name, email, password } = refs.signUpForm.elements;
+
+//   if (name.value.trim() < 2) {
+//     errors.push(['name', 'Invalid name']);
+//   }
+
+//   if (!email.value.trim().includes('@')) {
+//     errors.push(['email', 'Invalid email']);
+//   }
+
+//   if (password.value.length < 8) {
+//     errors.push(['password', 'Invalid password']);
+//   }
+
+//   errors.forEach(error => {
+//     refs.signUpForm.querySelector(`[data-error='${error[0]}']`).textContent =
+//       error[1];
+//   });
+
+//   if (errors.length === 0) {
+//     console.log('форма нормальная');
+//     refs.signUpForm.reset();
+//   }
+// }
+
+// Пост у стрічці: перший клік ставить лайк і збільшує лічильник, повторний — знімає.
+
+// Що зробити:
+// Зберігати стан у змінній liked і поточне число лайків.
+// На click перемикати стан і змінювати число на 1 вгору або вниз.
+// Оновлювати текст лічильника і клас liked на кнопці.
+
+// const refs = {
+//   likeBtn: document.querySelector('.like'),
+//   likesCount: document.querySelector('.num'),
+// };
+
+// let isliked = false;
+// let numOfLikes = Number(refs.likesCount.textContent);
+// refs.likesCount.addEventListener('click', onLikeBtnClick);
+
+// function onLikeBtnClick() {
+//   isliked = !isliked;
+//   numOfLikes += isliked ? 1 : -1;
+
+//   refs.likesCount.textContent = numOfLikes;
+//   refs.likeBtn.classList.toggle('liked', isliked);
+// }
+
+// Кнопка оформлення замовлення заблокована, доки користувач не поставив галочку згоди.
+
+// Що зробити:
+// Повісити обробник change на чекбокс.
+// Керувати властивістю disabled кнопки залежно від event.target.checked.
+// Перевірити, що зняття галочки знову блокує кнопку.
+
+// const refs = {
+//   checkbox: document.querySelector('#agree'),
+//   orderBtn: document.querySelector('#order'),
+// };
+
+// refs.checkbox.addEventListener('change', onCheckBoxClick);
+
+// function onCheckBoxClick(event) {
+//   refs.orderBtn.disabled = !event.target.checked;
+
+//   refs.orderBtn.disabled = event.target.checked ? false : true;
+// }
+
+// Під полем відгуку показуємо, скільки символів уже введено, і попереджаємо, коли ліміт майже вичерпано.
+
+// Що зробити:
+
+// Слухати подію input на textarea.
+// Виводити поточну довжину value в лічильник.
+// Додавати клас warn, коли залишилось менше 20 символів.
+
+// const LIMIT = 200;
+
+// const refs = {
+//   reviewTextArea: document.querySelector('#review'),
+//   spanUsed: document.querySelector('#used'),
+// };
+
+// refs.reviewTextArea.addEventListener('input', onReviewTextAreaInput);
+
+// function onReviewTextAreaInput() {
+//   const length = refs.reviewTextArea.value.length;
+
+//   refs.spanUsed.textContent = length;
+
+//   refs.spanUsed.classList.toggle('warn', length > LIMIT - 180);
+// }
+
+// Дані рейсу зберігаються в data-атрибутах. Замість п’яти звертань до dataset розберіть його однією деструктуризацією і складіть рядок для табло.
+
+// Що зробити:
+// Отримати dataset картки рейсу.
+// Однією деструктуризацією дістати code, from, to, gate, time.
+// Скласти підсумковий рядок і вивести його в .summary.
+
+// const refs = {
+//   articleFly: document.querySelector('.flight'),
+//   summaryInfo: document.querySelector('.summary'),
+// };
+
+// const { code, from, to, gate, time } = refs.articleFly.dataset;
+
+// refs.summaryInfo.textContent = `${code}: ${from} => ${to}, Выход ${gate}, Вылет ${time}`;
+
+// Ключі data-атрибутів короткі й неоднозначні: name і price нічого не кажуть про контекст. Дайте змінним зрозумілі імена прямо в деструктуризації.
+
+// Що зробити:
+// Дістати dataset картки номера.
+// Розібрати його з перейменуванням: name → roomName, price → pricePerNight.
+// Порахувати вартість трьох ночей і вивести опис у .info.
+
+// const refs = {
+//   room: document.querySelector('.room'),
+//   info: document.querySelector('.info'),
+// };
+
+// const { name: roomName, price: pricePerNight, beds } = refs.room.dataset;
+
+// refs.info.textContent = `${roomName}: Кроватей - ${beds}, Цена 3 ночей: ${Number(pricePerNight) * 3}`;
+
+// У частини позицій прайсу немає атрибута data-discount. Код не повинен ламатись і не повинен писати NaN.
+
+// Що зробити:
+// У циклі по позиціях розібрати dataset із значенням за замовчуванням для discount.
+// Порахувати кінцеву ціну з урахуванням відсотка знижки.
+// Вивести результат у текст позиції.
+
+// const refs = {
+//   priceItems: document.querySelectorAll('.item'),
+// };
+
+// refs.priceItems.forEach(priceItem => {
+//   const { price, title, discount = 0 } = priceItem.dataset;
+
+//   const total = Math.round(Number(price) * (1 - Number(discount) / 100));
+
+//   priceItem.textContent = total;
+// });
+
+// Кнопка «прочитано» позначає сповіщення. Замість event.target у трьох місцях дістаньте target один раз деструктуризацією.
+
+// Що зробити:
+// Повісити делегований обробник на список сповіщень.
+// Деструктуризацією дістати target з обʼєкта події.
+// Знайти саме сповіщення і позначити його класом is-read.
+// Прибрати кнопку, бо вона вже не потрібна.
+
+// const refs = {
+//   notifications: document.querySelector('.notifications'),
+// };
+
+// refs.notifications.addEventListener('click', onNotificationsItemClick);
+
+// function onNotificationsItemClick(event) {
+//   const { target } = event;
+//   if (target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+//   target.closest('.notification').classList.add('is-read');
+//   target.remove();
+// }
