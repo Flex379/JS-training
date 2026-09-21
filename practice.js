@@ -1556,3 +1556,71 @@
 //   target.closest('.notification').classList.add('is-read');
 //   target.remove();
 // }
+
+// Сайт вітає нового відвідувача окремо, а тим, хто повертається, показує номер візиту.
+
+// Що зробити:
+// Прочитати значення за ключем visits.
+// Перетворити його на число, додати одиницю і зберегти назад.
+// Для першого візиту вивести окреме привітання, для інших — номер візиту.
+// Перезавантажити сторінку кілька разів і перевірити значення в DevTools.
+
+// const STORAGE_KEY = 'visits';
+
+// const refs = {
+//   visitsMessage: document.querySelector('#visits'),
+// };
+
+// const visits = Number(localStorage.getItem(STORAGE_KEY)) + 1;
+
+// localStorage.setItem(STORAGE_KEY, visits);
+
+// refs.visitsMessage.textContent =
+//   visits === 1 ? 'Привет!' : `Привет, вы у нас уже ${visits}й раз`;
+
+// Клік по сердечку додає товар у вішліст або прибирає з нього. Позначки й лічильник у шапці відновлюються після перезавантаження.
+
+// Що зробити:
+// Прочитати збережений масив id і загорнути його в Set.
+// Функція render підсвічує сердечка обраних товарів і оновлює лічильник.
+// Делегуванням ловити кліки по .heart, діставши id картки деструктуризацією.
+// Додавати або прибирати id із Set і зберігати як масив.
+
+// const refs = {
+//   catalog: document.querySelector('#catalog'),
+//   wishCount: document.querySelector('#wish-count'),
+// };
+
+// const STORAGE_KEY = 'wishlist';
+
+// const wishList = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY)) || []);
+
+// refs.catalog.addEventListener('click', onClickCatalogBtn);
+
+// document.addEventListener('DOMContentLoaded', onDomContentLoaded);
+
+// function onClickCatalogBtn(event) {
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+
+//   const { id } = event.target.closest('.product').dataset;
+
+//   wishList.has(id) ? wishList.delete(id) : wishList.add(id);
+
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify([...wishList]));
+//   refs.wishCount.textContent = wishList.size;
+//   render(event.target, wishList, id);
+// }
+
+// function render(target, wishList, id) {
+//   target.classList.toggle('active', wishList.has(id));
+// }
+
+// function onDomContentLoaded() {
+//   document.querySelectorAll('.heart').forEach(btn => {
+//     const { id } = btn.closest('.product').dataset;
+//     btn.classList.toggle('active', wishList.has(id));
+//     refs.wishCount.textContent = wishList.size;
+//   });
+// }
